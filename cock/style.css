@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+}
+body{
+  display: grid;
+  place-items: center;
+  /*background: #dde1e7;*/
+background: #091922;
+  text-align: center;
+}
+.clock
+{
+width: 350px;
+height: 350px;
+display: flex;
+justify-content: center;
+align-items: center;
+background: url(clock.png);
+background-size: cover;
+border: 4px solid #091921;
+border-radius: 50%;
+box-shadow: 0 -15px 15px rgba(225,225,225,0.05),
+                    inset 0 -15px 15px rgba(225,225,225,0.05),
+                    0 15px 15px rgba(0,0,0,0.9),
+                    inset 0 15px 15px rgba(0,0,0,0.9);
+}
+.clock:before
+{
+content: '';
+position: absolute;
+width: 15px;
+height: 15px;
+background: #aaa;
+border-radius: 50%;
+z-index: 10000;
+}
+.clock:after{
+content: '';
+position: absolute;
+width: 15px;
+height: 15px;
+background: #aaa;
+border-radius: 50%;
+z-index: 10000;
+}
+.clock .center-nut{
+  height: 15px;
+  width: 15px;
+  background: #404040;
+  border-radius: 50%;
+  z-index: 10000;
+  position: absolute;
+}
+.clock .center-nut2{
+  height: 9px;
+  width: 9px;
+  background: #3498db;
+  border-radius: 50%;
+  z-index: 10000;
+  position: absolute;
+}
+
+.sec-hand,.min-hand,.hr-hand{
+  position: absolute;
+}
+.sec-hand, .sec{
+  height: 180px;
+  width: 180px;
+  z-index: 6;
+}
+.min-hand, .min{
+  height: 140px;
+  width: 140px;
+  z-index: 5;
+}
+.hr-hand, .hr{
+  height: 110px;
+  width: 110px;
+  z-index: 4;
+}
+.sec,.min,.hr{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+.sec:before{
+  position: absolute;
+  content: '';
+  height: 110px;
+  width: 3px;
+  background: #3498db;
+}
+.sec:after{
+  position: absolute;
+  content: '';
+  height: 35px;
+  width: 7px;
+  background: #3498db;
+  top: 105px;
+  border-radius: 5px;
+}
+.min:before{
+  position: absolute;
+  content: '';
+  width: 1px;
+  top: -15px;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 60px solid #e95949;
+}
+.min:after{
+  position: absolute;
+  content: '';
+  width: 3px;
+  top: 40px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 30px solid #e95949;
+}
+.hr:before{
+  position: absolute;
+  content: '';
+  width: 1px;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 35px solid #303030;
+}
+.hr:after{
+  position: absolute;
+  content: '';
+  width: 3px;
+  top: 34px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 25px solid #303030;
+}
